@@ -1,0 +1,79 @@
+### Get all instruments
+
+GET http://localhost:8080/api/instruments
+
+### Get single instrument
+
+GET http://localhost:8080/api/instruments/5ef603ba-33ce-483a-8ee7-bf04addceb41
+
+### Get single instrument, not existing
+
+GET http://localhost:8080/api/instruments/9dc103ba-33ce-483a-8ee7-bf04addceb41
+
+### Create instrument
+
+PUT http://localhost:8080/api/instruments/123e4567-e89b-42d3-a456-556642440000
+Content-Type: application/json
+
+{
+  "name": "pianos",
+  "type": "kesy"
+}
+
+### Delete instrument
+
+DELETE http://localhost:8080/api/instruments/5ef603ba-33ce-483a-8ee7-bf04addceb41
+
+### Update instrument
+
+PATCH http://localhost:8080/api/instruments/123e4567-e89b-42d3-a456-556642440000
+Content-Type: application/json
+
+{
+  "name": "piano",
+  "type": "keys"
+}
+
+### Get all musicians
+
+GET http://localhost:8080/api/musicians
+
+### Get single musician
+
+GET http://localhost:8080/api/musicians/7b161086-17dc-453b-8e61-069fdb6cf065
+
+### Get single musician, not existing
+
+GET http://localhost:8080/api/musicians/8a411086-17dc-453b-8e61-069fdb6cf065
+
+### Get instrument musicians
+
+GET http://localhost:8080/api/instruments/5ef603ba-33ce-483a-8ee7-bf04addceb41/musicians
+
+### Get instrument musicians, not existing
+
+GET http://localhost:8080/api/instruments/9dc1003ba-33ce-483a-8ee7-bf04addceb41/musicians
+
+### Create musician
+
+PUT http://localhost:8080/api/musicians/018b2f19-e79e-7d6a-a56d-29feb6211b04
+Content-Type: application/json
+
+{
+  "name": "Rihard Wrigt",
+  "pseudonym": "Grand Mastre",
+  "instrument": "123e4567-e89b-42d3-a456-556642440000"
+}
+### Delete musician
+
+DELETE http://localhost:8080/api/musicians/7b161086-17dc-453b-8e61-069fdb6cf065
+
+### Update musician
+
+PATCH http://localhost:8080/api/musicians/018b2f19-e79e-7d6a-a56d-29feb6211b04
+Content-Type: application/json
+
+{
+  "name": "Richard Wright",
+  "pseudonym": "Grand Master"
+}

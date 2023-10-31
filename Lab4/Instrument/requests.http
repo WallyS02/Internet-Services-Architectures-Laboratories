@@ -1,0 +1,35 @@
+### Get all instruments
+
+GET http://localhost:8082/api/instruments
+
+### Get single instrument
+
+GET http://localhost:8082/api/instruments/5ef603ba-33ce-483a-8ee7-bf04addceb41
+
+### Get single instrument, not existing
+
+GET http://localhost:8082/api/instruments/9dc103ba-33ce-483a-8ee7-bf04addceb41
+
+### Create instrument
+
+PUT http://localhost:8082/api/instruments/123e4567-e89b-42d3-a456-556642440000
+Content-Type: application/json
+
+{
+  "name": "pianos",
+  "type": "kesy"
+}
+
+### Delete instrument
+
+DELETE http://localhost:8082/api/instruments/5ef603ba-33ce-483a-8ee7-bf04addceb41
+
+### Update instrument
+
+PATCH http://localhost:8082/api/instruments/123e4567-e89b-42d3-a456-556642440000
+Content-Type: application/json
+
+{
+  "name": "piano",
+  "type": "keys"
+}

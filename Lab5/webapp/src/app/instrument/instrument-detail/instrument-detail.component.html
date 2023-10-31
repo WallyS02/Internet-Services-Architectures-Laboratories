@@ -1,0 +1,17 @@
+<h1>Instrument details</h1>
+<mat-list>
+  <mat-list-item style="display: inline">{{ instrument?.id }}</mat-list-item>
+  <mat-list-item style="display: inline">{{ instrument?.name }}</mat-list-item>
+  <mat-list-item style="display: inline">{{ instrument?.type }}</mat-list-item>
+</mat-list>
+<h3>Musicians</h3>
+<mat-list *ngFor="let musician of musicians">
+  <mat-list-item style="display: inline">{{ musician.id }}</mat-list-item>
+  <mat-list-item style="display: inline">{{ musician.name }}</mat-list-item>
+  <button mat-raised-button color="primary" style="display: inline; padding: 5px; margin: 5px" [routerLink]="['/detail', instrument?.id, 'detail-musician', musician.id]">Detail</button>
+  <button mat-raised-button style="display: inline; padding: 5px; margin: 5px" [routerLink]="['/detail', instrument?.id, 'edit-musician', musician.id]">Edit</button>
+  <button mat-raised-button color="warn" (click)="delete(musician.id)" style="display: inline; padding: 5px; margin: 5px">Delete</button>
+</mat-list>
+<button mat-raised-button [routerLink]="['/detail', instrument?.id, 'add-musician']">Add new musician</button>
+<button mat-raised-button routerLink="/" style="padding: 5px; margin: 5px; display: block">Cancel</button>
+<router-outlet></router-outlet>

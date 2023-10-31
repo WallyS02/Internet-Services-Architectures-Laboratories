@@ -1,0 +1,11 @@
+<h1>Edit instrument</h1>
+<mat-form-field appearance="fill" style="padding: 5px; margin: 5px; display: block; max-width: 300px">
+  <mat-label>Enter instrument name</mat-label>
+  <input matInput [(ngModel)]="instrument!.name">
+</mat-form-field>
+<mat-form-field appearance="fill" style="padding: 5px; margin: 5px; display: block; max-width: 300px">
+  <mat-label>Enter instrument type</mat-label>
+  <input matInput [(ngModel)]="instrument!.type">
+</mat-form-field>
+<button mat-raised-button (click)="confirm()" style="padding: 5px; margin: 5px">Confirm</button>
+<button mat-raised-button routerLink="/" style="padding: 5px; margin: 5px">Cancel</button>
