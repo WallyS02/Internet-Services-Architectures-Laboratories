@@ -1,0 +1,9 @@
+<h1>Musician details</h1>
+<mat-list>
+  <mat-list-item style="display: inline">{{ musician?.id }}</mat-list-item>
+  <mat-list-item style="display: inline">{{ musician?.name }}</mat-list-item>
+  <mat-list-item style="display: inline">{{ musician?.pseudonym }}</mat-list-item>
+  <mat-list-item style="display: inline">{{ instrument!.id }}</mat-list-item>
+  <mat-list-item style="display: inline">{{ instrument!.name }}</mat-list-item>
+</mat-list>
+<button mat-raised-button [routerLink]="['/detail', this.instrument!.id]" style="padding: 5px; margin: 5px; display: block">Cancel</button>

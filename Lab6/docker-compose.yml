@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  musician:
+    image: musician:0.0.1
+    restart: always
+
+  instrument:
+    image: instrument:0.0.1
+    restart: always
+    environment:
+      MUSIC_MUSICIAN_URL: "http://musician:8081"
+
+  gateway:
+    image: gateway:0.0.1
+    restart: always
+    environment:
+      MUSIC_MUSICIAN_URL: "http://musician:8081"
+      MUSIC_INSTRUMENT_URL: "http://instrument:8082"
+      MUSIC_GATEWAY_HOST: "gateway:8080"
+
+  webapp:
+    image: webapp:0.0.1
+    restart: always
+    environment:
+      API_URL: http://gateway:8080/api
+    ports:
+      - "8080:80"

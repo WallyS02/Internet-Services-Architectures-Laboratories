@@ -1,0 +1,11 @@
+<h1>Edit musician</h1>
+<mat-form-field appearance="fill" style="padding: 5px; margin: 5px; display: block; max-width: 300px">
+  <mat-label>Enter musician name</mat-label>
+  <input matInput [(ngModel)]="musician!.name">
+</mat-form-field>
+<mat-form-field appearance="fill" style="padding: 5px; margin: 5px; display: block; max-width: 300px">
+  <mat-label>Enter musician type</mat-label>
+  <input matInput [(ngModel)]="musician!.pseudonym">
+</mat-form-field>
+<button mat-raised-button (click)="confirm()" style="padding: 5px; margin: 5px">Confirm</button>
+<button mat-raised-button [routerLink]="['/detail', this.instrumentId]" style="padding: 5px; margin: 5px">Cancel</button>

@@ -1,0 +1,10 @@
+<h1>List of instruments</h1>
+<mat-list *ngFor="let instrument of instruments" style="display: block">
+    <mat-list-item style="display: inline">{{ instrument.id }}</mat-list-item>
+    <mat-list-item style="display: inline">{{ instrument.name }}</mat-list-item>
+    <button mat-raised-button color="primary" style="display: inline; padding: 5px; margin: 5px" [routerLink]="['/detail', instrument.id]">Detail</button>
+    <button mat-raised-button style="display: inline; padding: 5px; margin: 5px" [routerLink]="['/edit', instrument.id]">Edit</button>
+    <button mat-raised-button color="warn" (click)="delete(instrument.id)" style="display: inline; padding: 5px; margin: 5px">Delete</button>
+</mat-list>
+<button mat-raised-button routerLink="/add">Add new instrument</button>
+<router-outlet></router-outlet>
